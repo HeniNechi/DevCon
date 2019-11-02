@@ -28,8 +28,8 @@ router.post("/register", (req, res) => {
 
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
-      errors.email = "User not found";
-      return res.status(400).json({ errors });
+      errors.email = "User alredy Signed";
+      return res.status(400).json(errors);
     } else {
       const avatar = gravatar.url(req.body.email, {
         s: "200",
@@ -40,7 +40,7 @@ router.post("/register", (req, res) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        avatar,
+        avatar:avatar,
         password: req.body.password
       });
 
@@ -75,8 +75,8 @@ router.post("/login", (req, res) => {
   User.findOne({ email }).then(user => {
     // Check for user
     if (!user) {
-      errors.email = "User nor found";
-      return res.status(404).json({ errors });
+      errors.email = "User not found";
+      return res.status(404).json(errors);
     }
 
     // Check password
@@ -88,6 +88,7 @@ router.post("/login", (req, res) => {
         const payload = {
           id: user.id,
           firstName: user.firstName,
+          lastName:user.lastName,
           avatar: user.avatar
         };
 
