@@ -15,6 +15,13 @@ import Dashboard from "./components/dashboard/Dashboard";
 import { clearCurrentProfile } from "./actions/profileAction";
 import PrivateRoute from "./components/common/PrivateRoute";
 import CreateProfile from "./components/create-profile/CreateProfile";
+import EditProfile from "./components/edit-profile/EditProfile";
+import Addexperience from "./components/add-credentials/Addexperience";
+import AddEducation from "./components/add-credentials/AddEducation";
+import Porfiles from "./components/profiles/Porfiles";
+import Profile from "./components/profile/Profile";
+import NotFound from "./components/notFound.js/NotFound";
+
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -60,6 +67,42 @@ class App extends Component {
                   component={CreateProfile}
                 />
               </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/edit-profile"
+                  component={EditProfile}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/add-experience"
+                  component={Addexperience}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/add-education"
+                  component={AddEducation}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/profiles"
+                  component={Porfiles}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/profile/:handle"
+                  component={Profile}
+                />
+              </Switch>
+              <Route exact path="/not-found" component={NotFound} />
             </div>
             <Footer />
           </Router>

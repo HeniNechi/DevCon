@@ -21,7 +21,7 @@ class Login extends Component {
       this.props.history.push("/dashboard");
     }
   }
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
@@ -44,7 +44,6 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
-    console.log(errors);
     return (
       <div className="login">
         <div className="container">
@@ -83,7 +82,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  LoginUser: PropTypes.func.isRequired,
+  loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };

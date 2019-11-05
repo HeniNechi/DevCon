@@ -17,16 +17,25 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <a className="nav-link" onClick={this.onLogoutClick.bind(this)} href="#">
+          <Link className="nav-link" to="dashboard">
+            Dashboard
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link
+            to=""
+            onClick={this.onLogoutClick.bind(this)}
+            className="nav-link"
+          >
             <img
               className="rounded-circle"
               src={user.avatar}
-              alt={`${user.firstName} ${user.lastName}`}
-              style={{ width: "25px", marginRight: "5px" }}
-              title="You must have a gravatar connected "
-            />
-            Log out
-          </a>
+              alt={user.firstname}
+              style={{ width: '25px', marginRight: '5px' }}
+              title="You must have a Gravatar connected to your email to display an image"
+            />{' '}
+            Logout
+          </Link>
         </li>
       </ul>
     );
@@ -44,7 +53,14 @@ class Navbar extends Component {
         </li>
       </ul>
     );
-
+    const DevAuth = (<ul className="navbar-nav mr-auto">
+    <li className="nav-item">
+      <Link className="nav-link" to="/profiles">
+        
+        Developers
+      </Link>
+    </li>
+  </ul>)
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
@@ -61,14 +77,7 @@ class Navbar extends Component {
           </button>
 
           <div className="collapse navbar-collapse right" id="mobile-nav">
-          <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/profiles">
-                  
-                  Developers
-                </Link>
-              </li>
-            </ul>
+          {isAuthenticated ? DevAuth : ''}
             {isAuthenticated ? authLinks : guestLinks}
           </div>
         </div>
@@ -78,7 +87,6 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
-  LoginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
 
