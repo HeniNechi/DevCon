@@ -78,11 +78,11 @@ class Dashboard extends Component {
       }
     }
     return (
-      <div className="dashboard ">
+      <div className="dashboard mb-5">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-d text-center ">Dashboard</h1>
+              <h1 className="display-4 text-center">Dashboard</h1>
               <div
                 className="card"
                 style={{

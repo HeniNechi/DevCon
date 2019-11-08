@@ -1,7 +1,11 @@
 img {
   width: 100%;
 }
-
+.App{
+height: 100vh;
+display: flex;
+flex-direction: column;
+}
 .landing {
   position: relative;
   background: url('./img/showcase.png') no-repeat;
@@ -9,7 +13,7 @@ img {
   background-position: center;
   height: 100vh;
   margin-top: -24px;
-  margin-bottom: -50px;
+  margin-bottom: 0px;
   display: flex;
   flex-direction: column;
 }
@@ -57,7 +61,7 @@ img {
 .mini-footer {
   background:#192027;
   text-align:center;
- 
+  margin-top: auto;
 
  
 
@@ -76,4 +80,14 @@ img {
  }
 .table{
   border-radius: 0%;
+}
+.social {
+  -webkit-transition: .5s all ease-in-out;
+	-moz-transition: .5s all ease-in-out;
+	transition: .5s all ease-in-out;
+}
+a:hover .social {
+font-size:39px;
+padding: 3px 0;
+margin-bottom: 5px 0;
 }

@@ -21,6 +21,8 @@ import AddEducation from "./components/add-credentials/AddEducation";
 import Porfiles from "./components/profiles/Porfiles";
 import Profile from "./components/profile/Profile";
 import NotFound from "./components/notFound.js/NotFound";
+import Post from "./components/posts/Post";
+import PostId from "./components/post/PostId";
 
 
 // Check for token
@@ -54,9 +56,10 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <div className="container">
               <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
             </div>
             <div className="container">
-              <Route exact path="/login" component={Login} />
+              
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
@@ -100,6 +103,20 @@ class App extends Component {
                   exact
                   path="/profile/:handle"
                   component={Profile}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/feed"
+                  component={Post}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/post/:id"
+                  component={PostId}
                 />
               </Switch>
               <Route exact path="/not-found" component={NotFound} />

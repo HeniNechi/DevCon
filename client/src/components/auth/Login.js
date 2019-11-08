@@ -45,13 +45,13 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="login">
+      <div className="login mb-5">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Log In</h1>
               <p className="lead text-center">
-                Sign in to your Dev Social account
+                Sign in to your MD account
               </p>
               <form onSubmit={this.handleSubmit}>
                 <TextFieldGroup

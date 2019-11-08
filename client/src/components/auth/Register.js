@@ -51,12 +51,12 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="register">
+      <div className="register mb-5">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Sign Up</h1>
-              <p className="lead text-center">Create your Dev Social account</p>
+              <p className="lead text-center">Create your MD account</p>
               <form onSubmit={this.handleSubmit}>
                 <TextFieldGroup
                   type="text"
