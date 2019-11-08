@@ -39,6 +39,11 @@ app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
 
+app.get('/', function(req, res){
+  res.redirect('/todo');
+});
+
+
 // server static assests if in production
 if(process.env.NODE_ENV==='production'){
   app.use(express.static('client/build'))
