@@ -39,9 +39,6 @@ app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
 
-app.get('/', function(req, res){
-  res.redirect('/todo');
-});
 
 
 // server static assests if in production
