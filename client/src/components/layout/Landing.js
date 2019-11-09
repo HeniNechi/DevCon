@@ -16,10 +16,10 @@ class Landing extends Component {
               <div className="container">
                 <div className="row">
                   <div className="col-md-12 text-center">
-                    <h1 className="display-3 mb-4">Developers Social Center
+                    <h1 className="display-3 mb-2">Developers Social Center
                     </h1>
                     <p className="lead"> Create a developer profile/portfolio, share posts and get help from other developers</p>
-                    <hr />
+                    
                     <Link className="btn btn-lg btn-info mr-2" to="register">Sign Up</Link>
                     <Link className="btn btn-lg btn-light" to="login">Login</Link>
                     

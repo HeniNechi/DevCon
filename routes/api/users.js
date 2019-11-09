@@ -100,10 +100,10 @@ router.post("/login", (req, res) => {
           });
         });
       } else {
-          errors.password ='Password incorrect'
-        return res.status(404).json({errors});
+          errors.password ='Password incorrect '
+        return res.status(404).json(errors);
       }
-    });
+    })
   });
 });
 
